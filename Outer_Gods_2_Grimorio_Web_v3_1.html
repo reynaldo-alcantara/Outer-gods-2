@@ -1,0 +1,478 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Outer Gods 2 — Ficha de Personagem</title>
+<style>
+:root{color-scheme:dark;--bg:#101113;--panel:#191b20;--panel2:#22252b;--line:#393d46;--text:#eee9df;--muted:#b2b0ad;--accent:#d8c39b;--danger:#d88e8e}
+*{box-sizing:border-box}body{margin:0;background:radial-gradient(ellipse at top,#28252a 0,#101113 55%);color:var(--text);font:16px/1.5 system-ui,-apple-system,Segoe UI,sans-serif}
+header{padding:30px 18px 22px;text-align:center;border-bottom:1px solid var(--line)}header .eyebrow{letter-spacing:.18em;text-transform:uppercase;color:var(--accent);font-size:.75rem}h1{font-family:Georgia,serif;font-weight:500;letter-spacing:.04em;margin:.35rem 0;font-size:clamp(1.8rem,5vw,3rem)}header p{margin:.4rem auto 0;max-width:650px;color:var(--muted)}
+main{max-width:1050px;margin:auto;padding:18px;display:grid;gap:16px}.card{background:var(--panel);border:1px solid var(--line);border-radius:16px;padding:18px;min-width:0}.card h2{font:500 1.35rem Georgia,serif;margin:0 0 14px;color:var(--accent)}.card h3{font-size:1rem;margin:15px 0 8px}
+.tabs{display:flex;gap:8px;flex-wrap:wrap}.tabs button{flex:1;min-width:110px}.tab{display:none}.tab.active{display:block}
+label{display:block;font-size:.86rem;color:var(--muted);margin-bottom:5px}input,select,textarea{width:100%;background:#101215;color:var(--text);border:1px solid var(--line);border-radius:9px;padding:10px 11px;font:inherit;min-width:0}textarea{resize:vertical;min-height:80px}input[type=checkbox]{width:auto;accent-color:var(--accent)}button{background:var(--accent);color:#191715;border:0;border-radius:10px;padding:11px 14px;font:600 .95rem system-ui;cursor:pointer}button.secondary{background:var(--panel2);color:var(--text);border:1px solid var(--line)}button.danger{background:#4a2528;color:#ffe7e7}button:active{transform:translateY(1px)}.grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:12px}.grid3{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:10px}.row{display:flex;align-items:center;justify-content:space-between;gap:12px}.small{font-size:.83rem;color:var(--muted)}.stat{background:var(--panel2);border:1px solid var(--line);border-radius:12px;padding:12px}.stat strong{font-size:1.35rem;display:block}.stat span{font-size:.78rem;color:var(--muted)}.resource{display:grid;grid-template-columns:1fr auto;align-items:center;gap:8px}.resource input{max-width:100px}.checklist{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:8px}.check{display:flex;align-items:center;gap:8px;background:var(--panel2);border-radius:8px;padding:8px}.check label{margin:0;color:var(--text);flex:1}.rule{border-top:1px solid var(--line);padding-top:12px;margin-top:12px}.actions{display:flex;gap:8px;flex-wrap:wrap}.actions button{flex:1;min-width:145px}.hint{border-left:3px solid var(--accent);padding:9px 12px;background:#27251f;border-radius:0 8px 8px 0;color:#ddd3c2;font-size:.9rem}.footer{text-align:center;color:var(--muted);font-size:.8rem;padding:0 18px 25px}.hidden{display:none!important}
+@media(min-width:800px){main{grid-template-columns:1fr 1fr}.wide{grid-column:1/-1}}
+@media(max-width:560px){main{padding:10px}.card{padding:14px}.grid,.grid3{grid-template-columns:1fr 1fr}.checklist{grid-template-columns:1fr}.tabs button{min-width:calc(50% - 8px)}}
+.spell-catalog{font-size:.88rem}.spell-catalog b{letter-spacing:.03em}
+
+/* OUTER GODS II — edição visual: grimório gótico */
+:root{
+ --bg:#090a0c;--panel:#121316;--panel2:#1c1b1a;--line:#4b4032;
+ --text:#e6dfd0;--muted:#a7a092;--accent:#c7a86a;--danger:#a94442;
+ --gold-dim:#75603c;--ember:#7f302b;
+}
+html{scroll-behavior:smooth;background:var(--bg)}
+body{
+ background:
+  radial-gradient(ellipse at 50% -12%,rgba(131,91,49,.23),transparent 42%),
+  radial-gradient(ellipse at 0% 38%,rgba(81,24,26,.12),transparent 35%),
+  linear-gradient(180deg,#0c0c0d 0%,#090a0c 52%,#0d0b0a 100%);
+ color:var(--text);font-family:Georgia,'Times New Roman',serif;letter-spacing:.01em;
+}
+body:before{content:"";position:fixed;inset:0;pointer-events:none;z-index:0;opacity:.16;background-image:repeating-linear-gradient(0deg,transparent 0 5px,rgba(255,255,255,.018) 6px,transparent 7px);}
+header,main{position:relative;z-index:1}
+header{padding:42px 18px 30px;border-bottom:1px solid var(--gold-dim);background:linear-gradient(180deg,rgba(5,5,6,.65),rgba(5,5,6,.12));position:relative}
+header:after{content:"✦　✧　✦";display:block;color:var(--accent);font-size:15px;letter-spacing:.55em;margin:22px auto 0;padding-left:.55em;text-shadow:0 0 18px rgba(199,168,106,.32)}
+header .eyebrow{font-family:system-ui,sans-serif;font-size:.68rem;letter-spacing:.28em;color:#c7a86a}
+h1{font-size:clamp(2rem,7vw,4rem);letter-spacing:.12em;text-shadow:0 2px 0 #000,0 0 24px rgba(177,129,60,.17);line-height:1.15}
+header p{font-family:system-ui,sans-serif;font-size:.91rem;line-height:1.7;color:#aaa397}
+main{max-width:1100px;padding:24px 16px 50px;gap:18px}
+.card{position:relative;overflow:hidden;background:linear-gradient(145deg,rgba(26,25,23,.97),rgba(15,16,18,.98));border:1px solid var(--line);border-radius:3px;padding:clamp(15px,3vw,24px);box-shadow:0 12px 32px rgba(0,0,0,.25),inset 0 0 0 3px rgba(199,168,106,.025)}
+.card:before{content:"";position:absolute;top:0;left:0;width:58px;height:2px;background:linear-gradient(90deg,var(--accent),transparent)}
+.card:after{content:"";position:absolute;bottom:0;right:0;width:58px;height:2px;background:linear-gradient(270deg,var(--accent),transparent);pointer-events:none}
+.card h2{font-size:clamp(1.22rem,3vw,1.55rem);letter-spacing:.035em;color:#d3b77c;border-bottom:1px solid rgba(117,96,60,.5);padding-bottom:10px;text-shadow:0 1px 0 #000}
+.card h3{font-family:system-ui,sans-serif;font-weight:600;color:#c9c0ad;letter-spacing:.04em}
+.small,label,.tabs button,button,input,select,textarea{font-family:system-ui,-apple-system,Segoe UI,sans-serif}
+.small{color:#aaa397}
+.tabs{gap:7px}
+.tabs button,button{border-radius:2px;letter-spacing:.035em;transition:background .18s,border-color .18s,transform .18s,filter .18s}
+.tabs button{background:#241f18;color:#d5c7a7;border:1px solid #655238;font-size:.84rem;min-height:43px}
+.tabs button.secondary{background:#151619;color:#a9a294;border:1px solid #37342f}
+.tabs button:hover,button:hover{filter:brightness(1.12);border-color:#c7a86a}
+button{background:linear-gradient(180deg,#c9ad73,#a1844d);color:#17130d;border:1px solid #e0c78d;font-weight:700}
+button.secondary{background:linear-gradient(180deg,#282624,#19191a);color:#ded5c3;border:1px solid #514738}
+button.danger{background:linear-gradient(180deg,#6a2928,#3b191b);color:#f4dfd8;border:1px solid #84403a}
+input,select,textarea{background:rgba(7,8,10,.78);color:#e6dfd0;border:1px solid #403a31;border-radius:2px;padding:11px 12px;outline:none}
+input:focus,select:focus,textarea:focus{border-color:#b69658;box-shadow:0 0 0 2px rgba(182,150,88,.12)}
+input[type=checkbox]{accent-color:#c7a86a}
+label{color:#b8ad98;letter-spacing:.015em}
+hr{border:0;border-top:1px solid var(--line)}
+.tab.active{animation:appear .22s ease-out}
+@keyframes appear{from{opacity:.65;transform:translateY(3px)}to{opacity:1;transform:translateY(0)}}
+#saveStatus{color:#c7a86a}
+::selection{background:#6f4c2b;color:#fff4db}
+@media(max-width:600px){
+ header{padding:32px 15px 22px}header:after{margin-top:16px}
+ main{padding:14px 10px 32px;gap:12px}
+ .card{padding:15px 13px}
+ .tabs button{min-width:calc(50% - 6px);flex:1 1 calc(50% - 6px);font-size:.82rem;padding:10px 8px}
+ .grid{grid-template-columns:1fr!important}
+}
+@media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}.tab.active{animation:none}button{transition:none}}
+
+.formula-result{white-space:pre-wrap}.inventory-row,.ash-row{display:grid;grid-template-columns:1fr auto;gap:8px;padding:10px 0;border-bottom:1px solid var(--line);align-items:center}.inventory-row .small,.ash-row .small{line-height:1.5}.inventory-actions{display:flex;gap:5px;flex-wrap:wrap;justify-content:flex-end}.inventory-actions button{min-width:0;padding:7px 9px;font-size:.78rem}.pill{display:inline-block;border:1px solid var(--gold-dim);padding:2px 7px;margin:2px;border-radius:2px;color:#c7a86a;font: .72rem system-ui}.stat strong{overflow-wrap:anywhere}@media(max-width:560px){.inventory-row,.ash-row{grid-template-columns:1fr}.inventory-actions{justify-content:flex-start}}
+
+/* Interface de jogo: navegação compacta, cards e campo tático */
+.game-nav,.game-subnav,.battle-tools,.magic-switch{display:flex;gap:8px;flex-wrap:wrap;align-items:center}
+.game-nav .nav-btn{flex:1 1 auto;min-width:110px;min-height:48px;background:linear-gradient(180deg,#29251f,#171719);color:#d8c79f;border:1px solid #6b5738;box-shadow:inset 0 1px rgba(255,255,255,.04)}
+.game-nav .nav-btn.active{background:linear-gradient(180deg,#c9ad73,#927442);color:#15110a;border-color:#e3ca90;box-shadow:0 0 18px #c7a86a22}
+.game-subnav{margin-top:9px;padding:10px;border:1px solid #393126;background:#0d0e10;}
+.custom-panel{margin-top:10px;padding:12px;border:1px solid #655238;background:#111214}
+.game-subnav button,.magic-switch button{flex:1 1 auto;min-width:100px}
+.magic-switch{margin-bottom:14px;padding:5px;background:#0c0d0f;border:1px solid #393126}
+.magic-switch button{background:transparent;color:#bdb19a;border:1px solid transparent}
+.magic-switch button.active{background:#30281b;color:#e4ca8b;border-color:#7b623a}
+.magic-view{display:none}.magic-view.active{display:block;animation:appear .2s ease-out}.magic-view #spells + .rule,.magic-view #incantations + .rule{display:none!important}
+.spell-cards,.action-cards{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:10px}
+.spell-card,.action-card{position:relative;border:1px solid #51432f;background:linear-gradient(145deg,#211e19,#111214);padding:13px;min-width:0;box-shadow:inset 0 0 0 1px #ffffff05}
+.spell-card:before,.action-card:before{content:"✦";position:absolute;right:10px;top:8px;color:#8d7042;font-size:.8rem}
+.spell-card h4,.action-card h4{margin:0 20px 5px 0;font:600 1rem Georgia,serif;color:#dec58c}
+.spell-card .meta,.action-card .meta{font: .74rem system-ui,sans-serif;color:#a9a092;margin-bottom:8px}
+.spell-card p,.action-card p{font: .84rem/1.45 system-ui,sans-serif;color:#d1c8b8;margin:6px 0 10px}
+.card-actions{display:flex;gap:6px;flex-wrap:wrap}.card-actions button{flex:1;min-width:80px;padding:8px 9px;font-size:.78rem}
+.battle-tools{margin-bottom:10px}.battle-tools button{padding:9px 11px;font-size:.83rem}
+.battle-grid{display:grid;grid-template-columns:repeat(8,minmax(0,1fr));gap:3px;padding:8px;background:#0a0b0c;border:1px solid #635239;max-width:560px;margin:auto}
+.battle-cell{position:relative;aspect-ratio:1/1;min-width:0;padding:0;border:1px solid #38352e;background:linear-gradient(135deg,#191b1b,#101112);color:#d7c69d;display:flex;align-items:center;justify-content:center;font-size:clamp(.7rem,3vw,1.15rem);font-family:system-ui,sans-serif}
+.battle-cell.selected{outline:2px solid #d0ae67;outline-offset:-2px;background:#3b3020}.battle-cell.player{background:#514324;color:#fff0b5}.battle-cell.enemy{background:#482426;color:#ffc9c5}.battle-cell.ally{background:#253b3b;color:#c4e4df}
+.battle-legend{display:flex;gap:14px;justify-content:center;flex-wrap:wrap;font: .75rem system-ui,sans-serif;color:#aaa397;margin:8px 0}.battle-legend span{padding:4px 7px;border:1px solid #3c352a}
+#battleReadout{margin-top:10px}.compact-mode .card{padding:12px}.compact-mode main{gap:10px}.compact-mode .card h2{margin-bottom:8px}.compact-mode textarea{min-height:55px}
+body.theme-moon{--accent:#9aafc5;--gold-dim:#465566;--line:#39434e}body.theme-blood{--accent:#b45b57;--gold-dim:#6d3837;--line:#4b3031}body.theme-ember{--accent:#c7a86a;--gold-dim:#75603c;--line:#4b4032}
+@media(max-width:560px){.spell-cards,.action-cards{grid-template-columns:1fr 1fr}.spell-card,.action-card{padding:10px}.spell-card p,.action-card p{font-size:.78rem}.game-nav .nav-btn{min-width:calc(50% - 8px)}.battle-grid{gap:2px;padding:5px}.battle-tools button{flex:1 1 calc(50% - 8px)}}
+@media(max-width:370px){.spell-cards,.action-cards{grid-template-columns:1fr}.battle-grid{gap:1px}}
+
+</style>
+</head>
+<body>
+<header>
+ <div class="eyebrow">✦ Crônicas do Crisol · Ficha de campanha v3.1 ✦</div>
+ <h1>OUTER GODS II</h1>
+ <p>Um grimório para aqueles que caminham sob um céu sem promessa. Uma ficha viva para a sua jornada. Personalize a interface, prepare suas artes e entre em combate.</p>
+</header>
+<main>
+ <section class="card wide">
+  <div class="row"><h2 style="margin:0">Sua ficha</h2><span class="small" id="saveStatus">Salva neste dispositivo</span></div>
+  <p class="small">Preencha os campos e use “Exportar ficha” para guardar um arquivo JSON ou “Imprimir / salvar PDF” para gerar uma versão para compartilhar. O salvamento automático funciona neste navegador/dispositivo.</p>
+  <div class="game-nav" style="margin-top:14px">
+   <button class="nav-btn active" data-tab="identity">♙ Personagem</button><button class="nav-btn" data-tab="combat">⚔ Combate</button><button class="nav-btn" data-tab="magic">✧ Grimório</button><button class="nav-btn" data-tab="arsenal">♜ Arsenal</button><button class="nav-btn" id="moreToggle" type="button">☷ Mais ▾</button>
+  </div>
+  <div class="game-subnav hidden" id="moreNav"><button class="secondary" data-tab="pact">Pacto</button><button class="secondary" data-tab="freeMagic">Manipulação livre</button><button class="secondary" data-tab="rituals">Rituais</button><button class="secondary" data-tab="ashes">Cinzas da Guerra</button><button class="secondary" data-tab="progress">Progressão</button><button class="secondary" id="settingsToggle" type="button">⚙ Personalizar</button></div>
+  <div class="custom-panel hidden" id="settingsPanel"><span class="small">Personalize sua interface</span><div class="game-nav"><button class="secondary" data-theme="ember">Brasa</button><button class="secondary" data-theme="moon">Lua</button><button class="secondary" data-theme="blood">Sangue</button><button class="secondary" id="densityToggle">Compactar / expandir</button></div><label for="playerAccent">Cor de destaque</label><select id="playerAccent"><option value="#c7a86a">Dourado envelhecido</option><option value="#9aafc5">Prata lunar</option><option value="#a94442">Vermelho sangue</option><option value="#8f9c7a">Verde musgo</option><option value="#b9a6d9">Violeta espectral</option></select></div>
+ </section>
+
+ <section class="card tab active" id="identity">
+  <h2>01 — Identidade e atributos</h2>
+  <div class="grid">
+   <div><label for="name">Nome do personagem</label><input id="name" placeholder="Nome"></div>
+   <div><label for="player">Jogador</label><input id="player" placeholder="Seu nome ou apelido"></div>
+   <div><label for="age">Idade</label><input id="age" type="number" min="0" placeholder="Idade"></div>
+   <div><label for="archetype">Arquétipo</label><select id="archetype"><option>Combatente</option><option selected>Investigador</option><option>Ocultista</option><option>Sobrevivente</option></select></div>
+  </div>
+  <h3>Conceito e história</h3>
+  <label for="concept">Quem é o personagem?</label><textarea id="concept" placeholder="Conceito, aparência, personalidade..."></textarea>
+  <label for="backstory">História pregressa</label><textarea id="backstory" placeholder="Origem e acontecimentos marcantes..."></textarea>
+  <h3>Atributos</h3>
+  <p class="small">Na criação normal, distribua +3, +2, +2, +1, 0 e −1 sem repetir. Máximo inicial recomendado: +3.</p>
+  <div class="grid">
+   <div><label for="FOR">Força (FOR)</label><select id="FOR" class="attr"><option>-1</option><option>0</option><option>1</option><option>2</option><option>3</option><option>4</option></select><span class="small">Golpes pesados, agarrões</span></div>
+   <div><label for="DES">Destreza (DES)</label><select id="DES" class="attr"><option>-1</option><option>0</option><option>1</option><option>2</option><option>3</option><option>4</option></select><span class="small">Precisão, reflexos, furtividade</span></div>
+   <div><label for="VIG">Vigor (VIG)</label><select id="VIG" class="attr"><option>-1</option><option>0</option><option>1</option><option>2</option><option>3</option><option>4</option></select><span class="small">Vida e resistência física</span></div>
+   <div><label for="INT">Intelecto (INT)</label><select id="INT" class="attr"><option>-1</option><option>0</option><option>1</option><option>2</option><option>3</option><option>4</option></select><span class="small">Investigação e conhecimento</span></div>
+   <div><label for="VON">Vontade (VON)</label><select id="VON" class="attr"><option>-1</option><option>0</option><option>1</option><option>2</option><option>3</option><option>4</option></select><span class="small">Pactos e resistência mental</span></div>
+   <div><label for="PRE">Presença (PRE)</label><select id="PRE" class="attr"><option>-1</option><option>0</option><option>1</option><option>2</option><option>3</option><option>4</option></select><span class="small">Persuasão e intimidação</span></div>
+  </div>
+  <div class="rule"><div class="row"><h3 style="margin:0">Perícias treinadas</h3><span class="small" id="skillCount">0/4</span></div><p class="small">Sugestão inicial: quatro. O mestre pode liberar mais perícias conforme a história. Cada uma concede +2 nos testes relacionados.</p>
+   <div class="checklist" id="skills"></div>
+  </div>
+  <h3>Motivações e vínculos</h3>
+  <label for="goal">Objetivo principal</label><textarea id="goal" placeholder="O que quer alcançar?"></textarea>
+  <label for="fear">Medo ou fraqueza</label><textarea id="fear" placeholder="O que teme perder ou descobrir?"></textarea>
+  <label for="bond">Vínculo pessoal</label><textarea id="bond" placeholder="Pessoa, lugar ou memória importante"></textarea>
+  <label for="promise">Promessa pendente</label><textarea id="promise" placeholder="Algo que ainda precisa cumprir"></textarea>
+ </section>
+
+ <section class="card tab" id="combat">
+  <h2>02 — Combate e equipamento</h2>
+  <div class="grid3">
+   <div class="stat"><span>Vida máxima</span><strong id="maxPV">16</strong></div>
+   <div class="stat"><span>Resistência máxima</span><strong id="maxRES">6</strong></div>
+   <div class="stat"><span>Foco máximo</span><strong id="maxFOC">4</strong></div>
+   <div class="stat"><span>Defesa total</span><strong id="defense">11</strong></div>
+   <div class="stat"><span>Iniciativa</span><strong id="initDisplay">1d20 + DES</strong></div>
+   <div class="stat"><span>Perícias</span><strong id="trainedCount">0</strong></div>
+  </div>
+  <h3>Recursos atuais</h3>
+  <div class="grid">
+   <div class="stat"><div class="resource"><label for="pvCurrent">PV atuais</label><input id="pvCurrent" type="number" min="0" value="16"></div><div class="actions"><button class="secondary" data-adjust="pvCurrent" data-delta="-1">−1</button><button class="secondary" data-adjust="pvCurrent" data-delta="1">+1</button><button class="secondary" data-adjust="pvCurrent" data-delta="-5">−5</button><button class="secondary" data-adjust="pvCurrent" data-delta="5">+5</button></div></div>
+   <div class="stat"><div class="resource"><label for="resCurrent">RES atuais</label><input id="resCurrent" type="number" min="0" value="6"></div><div class="actions"><button class="secondary" data-adjust="resCurrent" data-delta="-1">−1</button><button class="secondary" data-adjust="resCurrent" data-delta="1">+1</button><button class="secondary" data-refill="resCurrent">Recuperar</button></div></div>
+   <div class="stat"><div class="resource"><label for="focCurrent">FOC atuais</label><input id="focCurrent" type="number" min="0" value="4"></div><div class="actions"><button class="secondary" data-adjust="focCurrent" data-delta="-1">−1</button><button class="secondary" data-adjust="focCurrent" data-delta="1">+1</button><button class="secondary" data-refill="focCurrent">Recuperar</button></div></div>
+   <div class="stat"><div class="resource"><label for="initiative">Resultado iniciativa</label><input id="initiative" type="number" placeholder="Rolagem total"></div><div class="resource"><label for="bonusDefense">Bônus extra DEF</label><input id="bonusDefense" type="number" value="0"></div></div>
+  </div>
+  <h3>Posição e condições</h3>
+  <label for="position">Posicionamento</label><select id="position"><option>Engajado — corpo a corpo</option><option selected>Próximo — até 6 m</option><option>Distante — 7 a 15 m</option><option>Muito distante — acima de 15 m</option></select>
+  <div class="checklist" id="conditions"></div>
+  <label for="wounds">Ferimentos e efeitos persistentes</label><textarea id="wounds" placeholder="Ferimentos graves, sequelas, tratamento..."></textarea>
+  <div class="grid">
+   <div class="stat"><label for="stability">Sucessos de estabilização (0–3)</label><input id="stability" type="number" min="0" max="3" value="0"></div>
+   <div class="stat"><label for="failures">Falhas de estabilização (0–3)</label><input id="failures" type="number" min="0" max="3" value="0"></div>
+  </div>
+  <h3>Armas e armadura</h3>
+  <div class="grid">
+   <div><label for="weapon">Arma principal</label><select id="weapon"><option value="1d6">Adaga — 1d6</option><option value="1d8" selected>Espada — 1d8</option><option value="1d10">Machado pesado — 1d10</option><option value="bow">Arco — 1d8</option><option value="staff">Cajado — 1d6</option><option value="custom">Personalizada</option></select></div>
+   <div><label for="armor">Armadura</label><select id="armor"><option value="0">Nenhuma — redução 0</option><option value="1" selected>Leve — reduz 1 dano</option><option value="2">Média — reduz 2 dano</option><option value="3">Pesada — reduz 3 dano</option></select></div>
+  </div>
+  <label for="secondary">Arma secundária / ferramenta</label><input id="secondary" placeholder="Adaga, ferramenta, foco...">
+  <label for="gear">Kit inicial e itens pessoais</label><textarea id="gear" placeholder="Kit de exploração, itens pessoais..."></textarea>
+  <label for="inventory">Inventário adicional</label><textarea id="inventory" placeholder="Consumíveis, chaves, relíquias, moedas..."></textarea>
+  <div class="hint">Regras rápidas: ataque = 1d20 + atributo + perícia; esquiva custa 2 RES; aparo custa 2 RES; ataque pesado custa 2 RES e causa +2 dano. Armadura reduz dano sofrido (leve 1, média 2, pesada 3), não aumenta DEF. Recupera 2 RES no início do turno, salvo exaustão ou incapacidade.</div>
+
+  <div class="rule"><h3>Campo de batalha</h3><p class="small">Toque em uma casa para selecioná-la. Posicione seu personagem e adicione inimigos para acompanhar distâncias e posições aproximadas.</p>
+   <div class="battle-tools"><button id="placePlayer">♙ Posicionar personagem</button><button class="secondary" id="addEnemy">＋ Adicionar inimigo</button><button class="secondary" id="removeToken">× Remover peça</button><button class="secondary" id="clearBattle">Limpar grid</button><span class="small" id="selectedCell">Casa selecionada: —</span></div>
+   <div id="battleGrid" class="battle-grid" role="grid" aria-label="Campo de batalha 8 por 8"></div><div class="battle-legend"><span>♙ Personagem</span><span>◆ Aliado</span><span>☠ Inimigo</span></div><div id="battleReadout" class="hint">Selecione uma casa para começar.</div>
+  </div>
+  <div class="rule"><h3>Ações rápidas</h3><div class="action-cards" id="actionCards"></div><p class="small">Os cards ajudam a registrar a ação e pagar recursos quando aplicável; dano, testes e efeitos especiais ainda podem ser ajustados pelo mestre.</p></div>
+ </section>
+
+ <section class="card tab" id="pact">
+  <h2>03 — Pacto sobrenatural</h2>
+  <label for="pactType">Tipo de pacto</label><select id="pactType"><option value="grimoire">Grimório incompreensível — Gugu</option><option value="shifter">Criatura metamorfa — Luiz Henrique</option><option value="pain">Ausência de dor — Presente</option><option value="custom">Pacto personalizado</option></select>
+  <div class="hint" id="pactRules"></div>
+  <div class="grid">
+   <div class="stat"><label for="pactCurrent">Recurso atual</label><input id="pactCurrent" type="number" min="0" value="3"></div>
+   <div class="stat"><label for="pactMaxCustom">Máximo personalizado (se aplicável)</label><input id="pactMaxCustom" type="number" min="1" value="3"></div>
+  </div>
+  <div class="row"><span class="small" id="pactResourceLabel">Cargas de Inscrição</span><strong id="pactResourceValue">3/3</strong></div>
+  <div class="actions"><button class="secondary" data-adjust="pactCurrent" data-delta="-1">−1</button><button class="secondary" data-adjust="pactCurrent" data-delta="1">+1</button><button class="secondary" data-refill="pactCurrent">Recuperar</button></div>
+  <h3>Detalhes personalizados</h3>
+  <label for="manifestations">Manifestações conhecidas</label><textarea id="manifestations" placeholder="Poderes, custos, alcances, duração..."></textarea>
+  <label for="special">Habilidade exclusiva / evolução</label><textarea id="special" placeholder="Nome, efeito e condições"></textarea>
+  <label for="limits">Limites conhecidos</label><textarea id="limits" placeholder="O que não pode fazer?"></textarea>
+  <label for="price">Preço e riscos</label><textarea id="price" placeholder="Custos, consequências, condições de uso"></textarea>
+  <label for="mystery">Mistério da entidade (opcional; pode ser reservado ao mestre)</label><textarea id="mystery" placeholder="A verdadeira natureza do pacto..."></textarea>
+  <label for="pactNotes">Usos, sinais e descobertas</label><textarea id="pactNotes" placeholder="O que já aconteceu? Que sinais deixou?"></textarea>
+  <h3>Exposição sobrenatural</h3>
+  <div class="row"><label for="exposure">Exposição atual (0–6)</label><strong id="exposureValue">0/6</strong></div>
+  <input id="exposure" type="range" min="0" max="6" value="0">
+  <p class="small" id="exposureText">0–1: nenhum efeito permanente obrigatório.</p>
+ </section>
+
+
+ <section class="card tab" id="magic">
+  <h2>✧ Grimório</h2>
+  <div class="magic-switch"><button class="active" data-magicview="ready">✦ Preparados</button><button data-magicview="library">▤ Biblioteca</button><button data-magicview="notes">✎ Notas</button></div>
+  <div class="hint"><b>Magia sob controle do mestre:</b> a memória sugerida é orientação, não bloqueio. Você pode conhecer e preparar quantas artes quiser; custo, plausibilidade e risco continuam valendo.</div>
+  <div class="grid">
+   <div class="stat"><label for="magicTradition">Tradição principal</label><select id="magicTradition"><option>Feitiçaria (estudo)</option><option>Encantamento (vontade)</option><option>Liturgia (juramento)</option><option>Híbrida</option><option>Personalizada</option></select></div>
+   <div class="stat"><label for="magicFocus">Foco / catalisador</label><input id="magicFocus" placeholder="Cajado, selo, livro, relíquia..."></div>
+   <div class="stat"><label for="magicCurrent">FOC atual</label><input id="magicCurrent" type="number" min="0" value="4" readonly></div>
+   <div class="stat"><label for="magicNotes">Afinidade / anotações</label><input id="magicNotes" placeholder="Escola, voto, preço, condição..."></div>
+  </div>
+  <div class="magic-view active" id="magic-ready"><h3>Artes prontas para usar</h3><p class="small">Seus feitiços e encantamentos preparados aparecem como cards. O botão Usar desconta o custo de FOC reconhecido no texto da arte; resolva o efeito com o mestre.</p><div id="readyCards" class="spell-cards"></div><div class="row" style="margin-top:12px"><span class="small">Preparados — limite opcional sugerido: 3 + INT</span><strong id="preparedCount">0</strong></div><div class="checklist hidden" id="spells"></div><div class="checklist hidden" id="preparedSpellChecks"></div><div class="checklist hidden" id="incantations"></div><div class="checklist hidden" id="preparedIncantations"></div></div>
+  <div class="magic-view" id="magic-library"><h3>Biblioteca de feitiços</h3><p class="small">Conheça e prepare livremente. Não existe bloqueio automático de slots; a contagem é apenas informativa.</p><div id="spellLibraryCards" class="spell-cards"></div><h3>Biblioteca de encantamentos</h3><div id="incantationLibraryCards" class="spell-cards"></div></div>
+  <div class="magic-view" id="magic-notes"><h3>Encantamentos e artes personalizadas</h3><p class="small">Registre efeitos criados pelo mestre ou pelo jogador. Os pactos continuam separados e não viram automaticamente magias comuns.</p><label for="enchantments">Arma, armadura ou objeto — efeito, custo, duração e limite</label><textarea id="enchantments" placeholder="Nome, custo, duração, requisito, efeito e limite..."></textarea><label for="preparedSpells">Preparação para a expedição / gatilhos</label><textarea id="preparedSpells" placeholder="Componentes, gestos, gatilhos, restrições ou notas..."></textarea></div>
+ </section>
+
+ <section class="card tab" id="freeMagic">
+  <h2>05 — Manipulação livre</h2>
+  <div class="hint"><b>Regra central:</b> o jogador descreve o efeito, escolhe propriedades e monta uma fórmula. O mestre confirma alcance e plausibilidade antes da rolagem. Magia livre não faz qualquer coisa: não cria soluções sem custo, não apaga pactos, não ressuscita mortos automaticamente e não substitui informação ainda não descoberta.</div>
+  <h3>Construtor de fórmula</h3>
+  <div class="grid">
+   <div><label for="formulaPrinciple">Princípio / elemento</label><select id="formulaPrinciple"><option value="cinza">Cinza — resíduo, sufocamento, ocultação</option><option value="fogo">Combustão — calor, ignição, expansão</option><option value="pressao">Pressão — impacto, compressão, impulso</option><option value="mare">Maré — fluxo, atração, retorno</option><option value="erosao">Erosão — desgaste, quebra, enfraquecimento</option><option value="sangue">Sangue — vitalidade, vínculo, pulsação</option><option value="luz">Luz — revelação, juramento, foco</option><option value="sombra">Sombra — ocultação, ausência, silenciamento</option><option value="natureza">Natureza — raiz, crescimento, instinto</option><option value="gravidade">Gravidade — peso, queda, atração</option><option value="tempo">Tempo — atraso, eco, repetição breve</option><option value="memoria">Memória — vestígio, impressão, reconhecimento</option><option value="raio">Raio — descarga, condução, reflexo</option><option value="gelo">Geada — conservação, rigidez, entorpecimento</option><option value="vazio">Vazio — intervalo, deslocamento, negação limitada</option><option value="decomposicao">Decomposição — apodrecimento, dissolução, liberação</option></select></div>
+   <div><label for="formulaForm">Forma do efeito</label><select id="formulaForm"><option value="projétil">Projétil / ataque</option><option value="toque">Toque / arma</option><option value="barreira">Barreira / defesa</option><option value="zona">Zona / área</option><option value="movimento">Movimento / deslocamento</option><option value="sentido">Sentido / detecção</option><option value="alteracao">Alteração / controle</option><option value="utilidade">Utilidade / interação</option></select></div>
+   <div><label for="formulaPotency">Potência</label><select id="formulaPotency"><option value="0">I — sutil</option><option value="1">II — significativa</option><option value="2">III — intensa</option><option value="3">IV — extrema</option></select></div>
+   <div><label for="formulaRange">Alcance</label><select id="formulaRange"><option value="0">Pessoal / toque</option><option value="1">Curto — até 6 m</option><option value="2">Médio — até 12 m</option><option value="3">Longo — até 18 m</option></select></div>
+   <div><label for="formulaArea">Área</label><select id="formulaArea"><option value="0">Um alvo / objeto</option><option value="1">Pequena — até 2 m</option><option value="2">Ampla — até 4 m</option><option value="3">Grande — até 6 m</option></select></div>
+   <div><label for="formulaDuration">Duração</label><select id="formulaDuration"><option value="0">Instantânea</option><option value="1">Até o próximo turno</option><option value="2">Uma cena</option><option value="3">Até 10 minutos</option></select></div>
+   <div><label for="formulaComplexity">Complexidade</label><select id="formulaComplexity"><option value="0">Simples</option><option value="1">Combinada (2 propriedades)</option><option value="2">Intrincada (3+ propriedades)</option></select></div>
+   <div><label for="formulaRisk">Forçar além do seguro?</label><select id="formulaRisk"><option value="0">Não</option><option value="1">Sim — exceder limites</option></select></div>
+  </div>
+  <div class="grid3" style="margin-top:12px"><div class="stat"><span>Custo estimado</span><strong id="formulaCost">1 FOC</strong></div><div class="stat"><span>Risco sugerido</span><strong id="formulaExposure">Baixo</strong></div><div class="stat"><span>Teste sugerido</span><strong id="formulaTest">INT + Ocultismo</strong></div></div>
+  <label for="formulaIntent">Efeito pretendido, limites e descrição</label><textarea id="formulaIntent" placeholder="Descreva o efeito concreto, o que ele NÃO faz e como aparece na ficção."></textarea>
+  <div class="actions"><button id="formulaEvaluate">Montar fórmula</button><button class="secondary" id="formulaCast">Pagar custo de FOC</button></div>
+  <div class="hint" id="formulaResult" aria-live="polite">Configure os parâmetros e monte a fórmula. O mestre tem a palavra final sobre plausibilidade, CD e consequências.</div>
+  <h3>Regra de manipulação livre</h3>
+  <p class="small">Custo-base 1 FOC + Potência + Alcance + Área + Duração + Complexidade. Alcance pessoal/toque não adiciona custo. O mestre pode reduzir 1 (mínimo 1) se houver uma limitação ficcional forte; pode aumentar o custo ou exigir preparação para efeitos extraordinários. Teste padrão: d20 + INT + Ocultismo para fórmula estudada; d20 + VON + Controle para condução intuitiva. CD 12/16/20/25 conforme dificuldade. Sucesso realiza o efeito; falha por 1–4 permite efeito parcial com custo; falha por 5+ falha e pode gerar consequência. O custo de FOC é pago quando a magia é liberada.</p>
+  <p class="small">Se a fórmula exceder o FOC atual ou tentar um efeito extremo, o jogador pode forçar: recebe +1 Exposição por exceder o limite e o mestre define uma consequência proporcional. Forçar não permite violar limites fundamentais da campanha. Exposição segue a trilha do pacto, mas não altera nem substitui o pacto em si.</p>
+ </section>
+
+ <section class="card tab" id="rituals">
+  <h2>06 — Rituais</h2>
+  <div class="hint">Rituais são procedimentos preparados, não feitiços de combate. Eles mudam uma situação por meio de tempo, materiais, símbolos, local e interpretação correta. Em geral, não gastam FOC por rodada; podem exigir FOC no momento de concluir e sempre podem trazer risco se forem incompletos ou forçados.</div>
+  <div class="grid">
+   <div><label for="ritualName">Nome do ritual</label><input id="ritualName" placeholder="Ex.: Vigília das Cinzas"></div>
+   <div><label for="ritualCategory">Categoria</label><select id="ritualCategory"><option>Revelação</option><option>Proteção</option><option>Vínculo</option><option>Ruptura</option><option>Transmutação</option><option>Invocação</option><option>Purificação</option><option>Memória</option></select></div>
+   <div><label for="ritualTime">Tempo necessário</label><select id="ritualTime"><option>1 minuto</option><option>10 minutos</option><option>1 hora</option><option>Uma noite</option><option>Várias etapas / dias</option></select></div>
+   <div><label for="ritualCost">Custo de FOC ao concluir</label><input id="ritualCost" type="number" min="0" max="20" value="1"></div>
+  </div>
+  <label for="ritualMaterials">Componentes e preparação</label><textarea id="ritualMaterials" placeholder="Componentes consumidos, círculo, testemunhas, local, condição necessária..."></textarea>
+  <label for="ritualEffect">Efeito, duração e limites</label><textarea id="ritualEffect" placeholder="O que o ritual faz, o que não consegue fazer e como pode ser interrompido."></textarea>
+  <label for="ritualRisk">Falhas e consequências</label><textarea id="ritualRisk" placeholder="Pista falsa, efeito incompleto, chamar atenção, +1 Exposição se forçado..."></textarea>
+  <div class="actions"><button id="ritualSave">Registrar ritual nas notas</button></div>
+  <h3>Rituais em andamento / descobertos</h3><label for="ritualLog">Caderno ritualístico</label><textarea id="ritualLog" placeholder="Anote rituais descobertos, ingredientes que faltam, etapas concluídas e resultados."></textarea>
+ </section>
+
+ <section class="card tab" id="arsenal">
+  <h2>07 — Arsenal & inventário</h2>
+  <div class="hint">Separe o que está equipado, o que vai na mochila e o que está guardado em um depósito seguro. Itens armazenados não podem ser usados durante uma cena até que sejam recuperados. O limite de carga é uma regra de playtest e pode ser ajustado pelo mestre.</div>
+  <div class="grid3"><div class="stat"><span>Carga carregada</span><strong id="weightCurrent">0</strong></div><div class="stat"><span>Limite sugerido</span><strong id="weightLimit">12</strong></div><div class="stat"><span>Itens no depósito</span><strong id="storedCount">0</strong></div></div>
+  <div class="grid">
+   <div><label for="itemName">Nome do item</label><input id="itemName" placeholder="Poção, chave, relíquia..."></div>
+   <div><label for="itemType">Categoria</label><select id="itemType"><option>Consumível</option><option>Arma</option><option>Armadura</option><option>Ferramenta</option><option>Relíquia</option><option>Chave / pista</option><option>Material ritualístico</option><option>Outro</option></select></div>
+   <div><label for="itemWeight">Peso (unidades)</label><input id="itemWeight" type="number" min="0" step="0.5" value="1"></div>
+   <div><label for="itemQty">Quantidade</label><input id="itemQty" type="number" min="1" value="1"></div>
+   <div><label for="itemLocation">Localização</label><select id="itemLocation"><option value="equipped">Equipado</option><option value="carried" selected>Carregado</option><option value="stored">Armazenado</option></select></div>
+   <div><label for="itemNotes">Efeito / notas</label><input id="itemNotes" placeholder="Uso, carga, compatibilidade..."></div>
+  </div>
+  <div class="actions"><button id="addItem">Adicionar item</button></div>
+  <h3>Equipado e carregado</h3><div id="activeItems" class="spell-catalog"></div>
+  <h3>Armazenamento</h3><div id="storedItems" class="spell-catalog"></div>
+  <label for="storageLocation">Onde ficam os itens guardados?</label><input id="storageLocation" placeholder="Baú em Regen des Todes, depósito seguro...">
+  <label for="inventoryNotes">Notas de inventário</label><textarea id="inventoryNotes" placeholder="Itens emprestados, limite de espaço, suprimentos compartilhados..."></textarea>
+ </section>
+
+ <section class="card tab" id="ashes">
+  <h2>08 — Cinzas da Guerra</h2>
+  <div class="hint">Uma Cinza da Guerra é a memória técnica deixada por alguém que dedicou a vida a uma arte. Quando essa pessoa morre, a técnica pode persistir como cinza sobrenatural na arma. A cinza pode ser removida e instalada em outra arma compatível; retirar não destrói a técnica, mas cada cinza só pode estar instalada em uma arma por vez.</div>
+  <div class="grid">
+   <div><label for="ashName">Nome da cinza</label><input id="ashName" placeholder="Ex.: Passo do Carrasco"></div>
+   <div><label for="ashFamily">Família compatível</label><select id="ashFamily"><option>Espada / lâmina curta</option><option>Espada pesada</option><option>Machado / martelo</option><option>Lança / haste</option><option>Arco</option><option>Cajado / foco</option><option>Escudo</option><option>Universal</option></select></div>
+   <div><label for="ashType">Natureza</label><select id="ashType"><option>Física</option><option>Defensiva</option><option>Movimento</option><option>Elemental</option><option>Arcana</option><option>Controle</option></select></div>
+   <div><label for="ashCost">Custo de RES ou FOC</label><input id="ashCost" placeholder="Ex.: 2 RES ou 1 FOC"></div>
+  </div>
+  <label for="ashEffect">Técnica e condição de ativação</label><textarea id="ashEffect" placeholder="Descreva a técnica, alcance, dano/efeito, abertura e limite de uso."></textarea>
+  <label for="ashInstalled">Arma em que está instalada</label><input id="ashInstalled" placeholder="Nome da arma; deixe vazio se estiver guardada como cinza solta.">
+  <div class="actions"><button id="addAsh">Registrar cinza</button></div>
+  <h3>Cinzas conhecidas</h3><div id="ashList" class="spell-catalog"></div>
+  <label for="ashNotes">Cinzas descobertas / técnicas de NPCs</label><textarea id="ashNotes" placeholder="Quem deixou a cinza, como foi obtida, compatibilidades especiais..."></textarea>
+ </section>
+
+ <section class="card tab" id="progress">
+  <h2>09 — Progressão e anotações</h2>
+  <div class="grid">
+   <div><label for="level">Nível (controle narrativo)</label><input id="level" type="number" min="1" value="1"></div>
+   <div><label for="milestones">Marcos acumulados</label><input id="milestones" type="number" min="0" value="0"></div>
+  </div>
+  <div class="hint" id="milestoneHint">A cada 2 Marcos de Jornada, escolha um avanço com o mestre.</div>
+  <h3>Técnicas aprendidas</h3>
+  <div class="checklist" id="techniques"></div>
+  <label for="advances">Avanços, marcos gastos e técnicas personalizadas</label><textarea id="advances" placeholder="Aprimorar atributo, treinar perícia, técnica de combate, evolução do pacto..."></textarea>
+  <label for="notes">Notas gerais da campanha</label><textarea id="notes" placeholder="Pistas, NPCs, promessas, acontecimentos..."></textarea>
+ </section>
+
+ <section class="card wide">
+  <h2>10 — Guardar e compartilhar</h2>
+  <div class="hint">Importante: esta página não publica automaticamente sua ficha na internet. Cada jogador pode abrir sua própria cópia do arquivo. Para compartilhar os dados preenchidos, exporte o JSON ou gere um PDF.</div>
+  <div class="actions" style="margin-top:14px">
+   <button id="exportJson">Exportar ficha (.json)</button>
+   <button id="importButton" class="secondary">Importar ficha (.json)</button>
+   <button id="printButton" class="secondary">Imprimir / salvar PDF</button>
+   <button id="resetButton" class="danger">Limpar ficha</button>
+  </div>
+  <input type="file" id="importFile" accept=".json,application/json" class="hidden">
+  <p id="feedback" class="small" aria-live="polite"></p>
+ </section>
+</main>
+<div class="footer">Outer Gods II · Ficha interativa v3.1 · Interface personalizável · Feita para a sua mesa</div>
+<script>
+
+const spellData=[
+["Brasa Guiada","Cinza & Fogo","1 FOC · ação · 12 m","Ataque mágico; 1d8 fogo. Em sucesso excepcional, alvo fica Marcado até o próximo turno."],
+["Manto de Cinzas","Cinza & Fogo","1 FOC · reação","Reduz em 1d6 o próximo dano sofrido antes do seu próximo turno."],
+["Passo da Fagulha","Cinza & Fogo","2 FOC · movimento","Teleporte curto de até 6 m para espaço visível; não atravessa barreiras seladas."],
+["Círculo de Brasas","Cinza & Fogo","2 FOC · ação · área pequena","Criaturas na área fazem DES CD 14 ou sofrem 1d6 fogo e perdem 2 m de movimento."],
+["Lança do Alvorecer","Luz & Juramento","2 FOC · ação · 18 m","Ataque mágico; 2d6 luz. Contra criaturas ocultas, revela sua posição por uma rodada."],
+["Selo de Vigília","Luz & Juramento","1 FOC · 10 min","Marca uma porta ou objeto; avisa o conjurador quando algo cruza o limite."],
+["Mãos do Refúgio","Luz & Juramento","2 FOC · toque","Restaura 1d8 PV; não funciona em alvo sem vida nem remove ferimentos persistentes."],
+["Voto Inquebrável","Luz & Juramento","2 FOC · cena","Um aliado recebe +2 no próximo teste para resistir a medo, coerção ou influência sobrenatural."],
+["Fio Rubro","Sangue & Sacrifício","1 FOC · 12 m","Ataque mágico; 1d8 dano. O conjurador perde 1 PV que não pode ser reduzido."],
+["Pulso Hemático","Sangue & Sacrifício","2 FOC · ação","Detecta seres vivos próximos através de paredes finas; não revela identidade nem intenção."],
+["Pacto de Coagulação","Sangue & Sacrifício","2 FOC · reação","Reduz em 1d8 um ferimento sofrido por um aliado a até 6 m; conjurador fica Abalado."],
+["Correntes de Sangue","Sangue & Sacrifício","3 FOC · 12 m","Alvo faz FOR CD 15 ou fica Imobilizado até o fim do próximo turno; pode gastar ação para tentar escapar."],
+["Raízes Errantes","Natureza & Fera","1 FOC · 12 m","Terreno em 3 m torna-se difícil por uma rodada; alvos falham DES CD 12 ficam Caídos."],
+["Pele de Casca","Natureza & Fera","2 FOC · toque · cena","Alvo reduz em 1 o dano físico recebido, até um mínimo de 1; não acumula com outro feitiço defensivo."],
+["Chamado do Corvo","Natureza & Fera","1 FOC · 10 min","Invoca um corvo comum ou interpreta sinais de aves próximas; não controla criaturas sobrenaturais."],
+["Dente do Predador","Natureza & Fera","2 FOC · cena","Uma vez por turno após mover ao menos 3 m, causa +1d6 dano no primeiro acerto corpo a corpo."],
+["Véu Lunar","Lua & Tempo","1 FOC · cena","Distorce sua silhueta; +2 em Furtividade enquanto houver sombra ou penumbra."],
+["Eco do Instante","Lua & Tempo","2 FOC · reação","Após ver um teste seu, role novamente e use o novo resultado; uma vez por cena."],
+["Marca da Maré","Lua & Tempo","1 FOC · 12 m","Marca alvo visível; você sabe sua direção aproximada por uma cena, mas não distância exata."],
+["Lentidão do Crepúsculo","Lua & Tempo","3 FOC · 12 m","Alvo faz VON CD 15; em falha, perde a reação e tem movimento reduzido à metade por uma rodada."],
+["Mão do Vazio","Vazio & Ruína","1 FOC · 9 m","Move um objeto solto pequeno ou puxa-o até 3 m; não pode desarmar diretamente um alvo."],
+["Silêncio Entre Mundos","Vazio & Ruína","2 FOC · área pequena","Abafa som numa área por uma rodada; conjuração audível dentro da área ainda pode ser percebida visualmente."],
+["Fenda Impossível","Vazio & Ruína","3 FOC · ação · 6 m","Abre passagem instantânea entre dois pontos visíveis a até 6 m, para uma criatura voluntária ou objeto pequeno."],
+["Nome Apagado","Vazio & Ruína","3 FOC · toque","Esconde temporariamente um símbolo ou vestígio mágico; não apaga memórias nem desfaz um pacto."],
+];
+
+const skillData=[
+["Atletismo","FOR"],["Luta","FOR"],["Armas","FOR"],["Pontaria","DES"],["Furtividade","DES"],
+["Percepção","INT"],["Investigação","INT"],["Conhecimento","INT"],["Sobrevivência","INT"],["Medicina","INT"],
+["Persuasão","PRE"],["Intimidação","PRE"],["Enganação","PRE"],["Ocultismo","INT"],["Controle","VON"]
+];
+const conditionNames=["Derrubado","Desequilibrado","Ferido","Abalado","Incapacitado","Exausto","Envenenado","Imobilizado"];
+const techniqueNames=["Contra-ataque","Guarda firme","Passo calculado","Técnica personalizada"];
+const fields=["magicTradition","magicFocus","magicCurrent","magicNotes","enchantments","preparedSpells","formulaPrinciple","formulaForm","formulaPotency","formulaRange","formulaArea","formulaDuration","formulaComplexity","formulaRisk","formulaIntent","ritualName","ritualCategory","ritualTime","ritualCost","ritualMaterials","ritualEffect","ritualRisk","ritualLog","storageLocation","inventoryNotes","ashName","ashFamily","ashType","ashCost","ashEffect","ashInstalled","ashNotes","name","player","age","archetype","concept","backstory","FOR","DES","VIG","INT","VON","PRE","goal","fear","bond","promise","pvCurrent","resCurrent","focCurrent","initiative","bonusDefense","position","wounds","stability","failures","weapon","armor","secondary","gear","inventory","pactType","pactCurrent","pactMaxCustom","manifestations","special","limits","price","mystery","pactNotes","exposure","level","milestones","advances","notes"];
+const stateChecks=["skills","conditions","techniques","spells","preparedSpellChecks","incantations","preparedIncantations"];
+let inventoryItems=[]; let ashItems=[];
+function el(id){return document.getElementById(id)}
+function selectedChecks(id){return [...el(id).querySelectorAll('input[type=checkbox]:checked')].map(x=>x.value)}
+function buildChecks(id,items){el(id).innerHTML="";items.forEach((item,i)=>{let val=Array.isArray(item)?item[0]:item;let label=document.createElement("label");label.className="check";let input=document.createElement("input");input.type="checkbox";input.value=val;let span=document.createElement("span");span.textContent=val;label.append(input,span);el(id).append(label);input.addEventListener("change",()=>{if(id==="skills"&&selectedChecks("skills").length>4){input.checked=false;el("feedback").textContent="Escolha no máximo quatro perícias treinadas.";return}update();save()})})}
+buildChecks("skills",skillData);
+buildChecks("conditions",conditionNames);
+buildChecks("techniques",techniqueNames);
+buildChecks("spells",spellData.map(s=>s[0]+" — "+s[1]+" ("+s[2]+")"));
+const incantationData=[
+["Juramento do Sol Partido","Luz / Juramento","2 FOC · ação","Reforça um aliado: +2 DEF até o início do próximo turno."],
+["Chama do Sepulcro","Cinza / Fogo","2 FOC · ação","Ataque a 12 m; 2d6 fogo-cinza. Alvo atingido não pode se esconder até o próximo turno."],
+["Sangue que Recorda","Sangue / Memória","1 FOC · toque","Lê uma impressão emocional breve deixada em sangue derramado; não revela fatos exatos."],
+["Voto da Última Vigília","Luz / Sombra","2 FOC · reação","Um aliado a 6 m recebe redução 1d6 contra um único dano; uma vez por cena."],
+["Mordida da Geada","Geada / Pressão","2 FOC · 12 m","Ataque 1d8; em falha de VIG CD 14, alvo perde 2 m de movimento por uma rodada."],
+["Coroa de Espinhos","Natureza / Sangue","2 FOC · cena","Quem agarrar ou atingir corpo a corpo o conjurador sofre 1d4 de dano uma vez por turno."],
+["Peso do Pecado","Gravidade / Vazio","3 FOC · 12 m","Alvo faz FOR CD 15 ou fica Caído; criaturas enormes podem resistir com vantagem."],
+["Olho por Trás do Véu","Sombra / Revelação","2 FOC · 10 min","Percebe presenças ocultas próximas, mas não identidade, intenção ou forma verdadeira."]];
+buildChecks("preparedSpellChecks",spellData.map(s=>s[0]+" — "+s[1]+" ("+s[2]+")"));
+buildChecks("incantations",incantationData.map(s=>s[0]+" — "+s[1]+" ("+s[2]+")"));
+buildChecks("preparedIncantations",incantationData.map(s=>s[0]+" — "+s[1]+" ("+s[2]+")"));
+const incCatalog=document.createElement("div");incCatalog.className="rule";incCatalog.innerHTML=incantationData.map(s=>`<div style="padding:8px 0;border-bottom:1px solid var(--line)"><b>${s[0]}</b> <span class="small">· ${s[1]} · ${s[2]}</span><div class="small">${s[3]}</div></div>`).join("");el("incantations").after(incCatalog);
+// Catálogo textual das magias disponíveis.
+const spellCatalog=document.createElement("div");spellCatalog.className="rule";spellCatalog.innerHTML=spellData.map(s=>`<div style="padding:8px 0;border-bottom:1px solid var(--line)"><b>${s[0]}</b> <span class="small">· ${s[1]} · ${s[2]}</span><div class="small">${s[3]}</div></div>`).join("");el("spells").after(spellCatalog);
+function num(id){return Number(el(id).value)||0}
+function attr(id){return num(id)}
+function maxPV(){return Math.max(10,16+2*attr("VIG"))}
+function maxRES(){return Math.max(3,6+attr("VIG"))}
+function maxFOC(){return Math.max(2,4+attr("VON")+(el("archetype").value==="Ocultista"?2:0))}
+function maxPact(){return el("pactType").value==="shifter"?2:el("pactType").value==="custom"?Math.max(1,num("pactMaxCustom")):3}
+function defense(){return 10+attr("DES")+num("bonusDefense")}
+function clampResource(id,max){el(id).value=Math.max(0,Math.min(max,num(id)))}
+function update(){
+ el("maxPV").textContent=maxPV();el("maxRES").textContent=maxRES();el("maxFOC").textContent=maxFOC();el("defense").textContent=defense();
+ if(el("magicCurrent")){el("magicCurrent").max=maxFOC();el("magicCurrent").value=Math.min(maxFOC(),Math.max(0,num("focCurrent")));}
+ el("initDisplay").textContent="1d20 "+(attr("DES")>=0?"+ ":"− ")+Math.abs(attr("DES"))+" DES";
+ el("trainedCount").textContent=selectedChecks("skills").length;el("skillCount").textContent=selectedChecks("skills").length+"/4";if(el("preparedCount")){el("preparedCount").textContent=selectedChecks("preparedSpellChecks").length+" feitiços · "+selectedChecks("preparedIncantations").length+" encantamentos";}if(el("memoryCount")){el("memoryCount").textContent=(selectedChecks("preparedSpellChecks").length+selectedChecks("preparedIncantations").length)+" preparados";}
+ const p=el("pactType").value;let label="Recurso do pacto",rules="";
+ if(p==="grimoire"){label="Cargas de Inscrição";rules="<b>Grimório incompreensível</b><br>Revelação (1 Foco): uma pista verdadeira, mas incompleta. Geometria Impossível (2 Foco): alteração espacial breve. Inscrição Reativa (1 Foco): símbolo com gatilho simples. Página Desconhecida (1 carga): efeito improvisado; falha grave pode causar +1 Exposição."}
+ else if(p==="shifter"){label="Pontos de Máscara";rules="<b>Criatura metamorfa</b><br>Instinto Predatório (1): +2 em Percepção, Sobrevivência ou rastreamento. Corpo Mutável (1): adaptação física temporária. Rosto Emprestado (1): aparência humanoide por uma cena. Intervenção (2): ação física sobrenatural definida com o mestre. Transformação além do limite: VON CD 14; falha pode causar +1 Exposição."}
+ else if(p==="pain"){label="Pontos de Ausência";rules="<b>Ausência de dor</b><br>Indiferença à Dor (1): ignora penalidade de Ferido durante uma cena. Persistência Impossível (1): age até o fim do próximo turno após chegar a 0 PV; depois cai incapacitado se não for estabilizado. Transferência (2): transfere uma condição sobrenatural transferível com aprovação do mestre. Persistência gera +1 Exposição."}
+ else{label="Recurso do pacto";rules="<b>Pacto personalizado</b><br>Defina com o mestre uma manifestação, custo, limite, risco e mistério antes de usar o poder."}
+ el("pactRules").innerHTML=rules;el("pactResourceLabel").textContent=label;el("pactResourceValue").textContent=num("pactCurrent")+"/"+maxPact();
+ el("exposureValue").textContent=num("exposure")+"/6";
+ let ex=num("exposure");el("exposureText").textContent=ex<=1?"0–1: nenhum efeito permanente obrigatório.":ex<=3?"2–3: pequenos sinais, sonhos e alterações de percepção.":ex<=5?"4–5: a entidade afeta cenas ou escolhas; −1 em testes para resistir a ela.":"6: crise de pacto. Resolva uma consequência importante; depois a Exposição volta a 3, mas a marca permanece.";
+ el("milestoneHint").textContent=num("milestones")%2===0?"Marcos registrados: "+num("milestones")+". Se concluiu dois desde o último avanço, escolha um avanço com o mestre.":"Marcos registrados: "+num("milestones")+". Falta 1 Marco para o próximo avanço.";
+ clampResource("pvCurrent",maxPV());clampResource("resCurrent",maxRES());clampResource("focCurrent",maxFOC());clampResource("pactCurrent",maxPact());
+}
+function data(){let d={};fields.forEach(id=>{d[id]=el(id).value});stateChecks.forEach(id=>d[id]=selectedChecks(id));d.inventoryItems=inventoryItems;d.ashItems=ashItems;return d}
+function save(){try{localStorage.setItem("outerGods2Sheet",JSON.stringify(data()));el("saveStatus").textContent="Salva neste dispositivo"}catch(e){el("saveStatus").textContent="Use Exportar para guardar"}}
+function applyData(d){fields.forEach(id=>{if(d[id]!==undefined&&el(id))el(id).value=d[id]});stateChecks.forEach(id=>{if(d[id]&&el(id))el(id).querySelectorAll('input[type=checkbox]').forEach(x=>x.checked=d[id].includes(x.value))});inventoryItems=Array.isArray(d.inventoryItems)?d.inventoryItems:[];ashItems=Array.isArray(d.ashItems)?d.ashItems:[];renderInventory();renderAshes();update();save()}
+
+const principles={cinza:"Cinza",fogo:"Combustão",pressao:"Pressão",mare:"Maré",erosao:"Erosão",sangue:"Sangue",luz:"Luz",sombra:"Sombra",natureza:"Natureza",gravidade:"Gravidade",tempo:"Tempo",memoria:"Memória",raio:"Raio",gelo:"Geada",vazio:"Vazio",decomposicao:"Decomposição"};
+function formulaCost(){return Math.max(1,1+num("formulaPotency")+num("formulaRange")+num("formulaArea")+num("formulaDuration")+num("formulaComplexity"));}
+function updateFormula(){if(!el("formulaCost"))return;let cost=formulaCost(),risk=Number(el("formulaRisk").value),pot=Number(el("formulaPotency").value),complex=Number(el("formulaComplexity").value);el("formulaCost").textContent=cost+" FOC";el("formulaExposure").textContent=risk||pot>=3||complex>=2?"Alto":pot>=2||complex===1?"Moderado":"Baixo";el("formulaTest").textContent=el("magicTradition").value.includes("Encantamento")?"VON + Controle":"INT + Ocultismo";}
+function renderInventory(){if(!el("activeItems"))return;let active=inventoryItems.filter(i=>i.location!=="stored"),stored=inventoryItems.filter(i=>i.location==="stored");const row=i=>`<div class="inventory-row"><div><b>${esc(i.name)}</b> <span class="pill">${esc(i.type)}</span> <span class="pill">${i.qty}× · ${i.weight} peso</span><div class="small">${esc(i.notes||"Sem notas")} · ${i.location==="equipped"?"Equipado":"Carregado"}</div></div><div class="inventory-actions"><button class="secondary" data-item="${i.id}" data-move="equipped">Equipar</button><button class="secondary" data-item="${i.id}" data-move="carried">Mochila</button><button class="secondary" data-item="${i.id}" data-move="stored">Guardar</button><button class="danger" data-item="${i.id}" data-delete="1">×</button></div></div>`;el("activeItems").innerHTML=active.length?active.map(row).join(""):'<p class="small">Nenhum item equipado ou carregado.</p>';el("storedItems").innerHTML=stored.length?stored.map(row).join(""):'<p class="small">O depósito está vazio.</p>';let weight=active.reduce((n,i)=>n+(Number(i.weight)||0)*(Number(i.qty)||1),0);el("weightCurrent").textContent=weight.toFixed(1).replace(/\.0$/,'');el("weightLimit").textContent=Math.max(8,10+attr("FOR")*2);el("storedCount").textContent=stored.reduce((n,i)=>n+(Number(i.qty)||1),0);document.querySelectorAll("[data-item]").forEach(b=>b.onclick=()=>{let i=inventoryItems.find(x=>String(x.id)===b.dataset.item);if(!i)return;if(b.dataset.delete)inventoryItems=inventoryItems.filter(x=>x!==i);else if(b.dataset.move)i.location=b.dataset.move;renderInventory();save()});}
+function esc(v){return String(v??"").replace(/[&<>"']/g,c=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"}[c]));}
+el("addItem").addEventListener("click",()=>{let name=el("itemName").value.trim();if(!name){el("feedback").textContent="Dê um nome ao item antes de adicionar.";return}inventoryItems.push({id:Date.now()+Math.random(),name,type:el("itemType").value,weight:Math.max(0,num("itemWeight")),qty:Math.max(1,num("itemQty")),location:el("itemLocation").value,notes:el("itemNotes").value.trim()});el("itemName").value="";el("itemNotes").value="";renderInventory();save();el("feedback").textContent="Item adicionado ao inventário."});
+function renderAshes(){if(!el("ashList"))return;el("ashList").innerHTML=ashItems.length?ashItems.map((a,i)=>`<div class="ash-row"><div><b>${esc(a.name)}</b> <span class="pill">${esc(a.family)}</span> <span class="pill">${esc(a.type)}</span><div class="small">Custo: ${esc(a.cost||"não definido")} · Instalada em: ${esc(a.installed||"cinza solta / armazenada")}<br>${esc(a.effect||"Sem descrição")}</div></div><div class="inventory-actions"><button class="secondary" data-ashmove="${i}">Transferir / editar arma</button><button class="danger" data-ashdelete="${i}">×</button></div></div>`).join(""):'<p class="small">Nenhuma cinza registrada.</p>';document.querySelectorAll("[data-ashmove]").forEach(b=>b.onclick=()=>{let a=ashItems[Number(b.dataset.ashmove)],weapon=prompt("Nome da arma compatível para instalar (deixe vazio para retirar):",a.installed||"");if(weapon===null)return;a.installed=weapon.trim();renderAshes();save()});document.querySelectorAll("[data-ashdelete]").forEach(b=>b.onclick=()=>{ashItems.splice(Number(b.dataset.ashdelete),1);renderAshes();save()});}
+el("addAsh").addEventListener("click",()=>{let name=el("ashName").value.trim();if(!name){el("feedback").textContent="Dê um nome à cinza antes de registrar.";return}ashItems.push({name,family:el("ashFamily").value,type:el("ashType").value,cost:el("ashCost").value.trim(),effect:el("ashEffect").value.trim(),installed:el("ashInstalled").value.trim()});["ashName","ashCost","ashEffect","ashInstalled"].forEach(id=>el(id).value="");renderAshes();save();el("feedback").textContent="Cinza da Guerra registrada."});
+el("formulaEvaluate").addEventListener("click",()=>{let cost=formulaCost(),p=principles[el("formulaPrinciple").value],form=el("formulaForm").selectedOptions[0].text,force=Number(el("formulaRisk").value),pot=Number(el("formulaPotency").value),area=Number(el("formulaArea").value),duration=Number(el("formulaDuration").value),complex=Number(el("formulaComplexity").value),intent=el("formulaIntent").value.trim()||"efeito a definir";let cd=pot===0&&complex===0?12:pot===1||complex===1?16:pot===2?20:25;let msg=`FÓRMULA: ${p} · ${form}\nIntenção: ${intent}\nCusto estimado: ${cost} FOC · CD sugerida: ${cd}\nTeste: ${el("formulaTest").textContent}.\nÁrea ${area}; duração ${el("formulaDuration").selectedOptions[0].text}.`;if(force)msg+=`\nFORÇADA: +1 Exposição após liberar, além de consequência proporcional decidida pelo mestre.`;else if(pot>=3||complex>=2)msg+=`\nRisco alto: o mestre pode exigir preparação, componente raro ou consequência mesmo em sucesso.`;el("formulaResult").textContent=msg;});
+el("formulaCast").addEventListener("click",()=>{let cost=formulaCost(),force=Number(el("formulaRisk").value);if(num("focCurrent")<cost&&!force){el("formulaResult").textContent=`Foco insuficiente (${num("focCurrent")}/${cost}). Ative “Forçar” para tentar além do limite, assumindo +1 Exposição e uma consequência definida pelo mestre.`;return}el("focCurrent").value=Math.max(0,num("focCurrent")-cost);if(force)el("exposure").value=Math.min(6,num("exposure")+1);update();save();el("formulaResult").textContent=`Custo de ${cost} FOC pago. ${force?"Exposição +1 aplicada. Resolva a consequência com o mestre.":"Resolva a rolagem e o efeito com o mestre."}`;});
+el("ritualSave").addEventListener("click",()=>{let entry=`${el("ritualName").value||"Ritual sem nome"} [${el("ritualCategory").value}] — Tempo: ${el("ritualTime").value}; custo: ${num("ritualCost")} FOC\nComponentes: ${el("ritualMaterials").value||"não definidos"}\nEfeito/limites: ${el("ritualEffect").value||"não definidos"}\nFalhas: ${el("ritualRisk").value||"a definir com o mestre"}\n\n`;el("ritualLog").value=entry+el("ritualLog").value;save();el("feedback").textContent="Ritual registrado no caderno ritualístico."});
+
+document.querySelectorAll("input,select,textarea").forEach(x=>{x.addEventListener("input",()=>{update();updateFormula();if(el("weightCurrent"))renderInventory();save()});x.addEventListener("change",()=>{update();updateFormula();if(el("weightCurrent"))renderInventory();save()})});
+document.querySelectorAll("[data-tab]").forEach(btn=>btn.addEventListener("click",()=>{document.querySelectorAll(".tab").forEach(t=>t.classList.toggle("active",t.id===btn.dataset.tab));document.querySelectorAll("[data-tab]").forEach(b=>{b.classList.toggle("secondary",b!==btn)})}));
+document.querySelectorAll("[data-adjust]").forEach(b=>b.addEventListener("click",()=>{let id=b.dataset.adjust;let max=id==="pvCurrent"?maxPV():id==="resCurrent"?maxRES():id==="focCurrent"?maxFOC():maxPact();el(id).value=Math.max(0,Math.min(max,num(id)+Number(b.dataset.delta)));update();save()}));
+document.querySelectorAll("[data-refill]").forEach(b=>b.addEventListener("click",()=>{let id=b.dataset.refill;el(id).value=id==="resCurrent"?maxRES():id==="focCurrent"?maxFOC():maxPact();update();save()}));
+el("exportJson").addEventListener("click",()=>{let blob=new Blob([JSON.stringify(data(),null,2)],{type:"application/json"});let a=document.createElement("a");a.href=URL.createObjectURL(blob);a.download=((el("name").value||"personagem").trim().replace(/[^a-z0-9-_]/gi,"_"))+"_outer_gods_2.json";a.click();URL.revokeObjectURL(a.href);el("feedback").textContent="Ficha exportada. Envie o arquivo JSON ao mestre ou guarde-o como backup."});
+el("importButton").addEventListener("click",()=>el("importFile").click());
+el("importFile").addEventListener("change",async e=>{let f=e.target.files[0];if(!f)return;try{let d=JSON.parse(await f.text());applyData(d);el("feedback").textContent="Ficha importada com sucesso."}catch(err){el("feedback").textContent="Não consegui ler esse arquivo JSON."}e.target.value=""});
+el("printButton").addEventListener("click",()=>window.print());
+el("resetButton").addEventListener("click",()=>{if(!confirm("Apagar todos os dados desta ficha neste dispositivo? Exporte uma cópia antes, se quiser guardá-la."))return;localStorage.removeItem("outerGods2Sheet");location.reload()});
+try{let d=JSON.parse(localStorage.getItem("outerGods2Sheet")||"null");if(d)applyData(d);else{el("pactType").value="grimoire";update();updateFormula();renderInventory();renderAshes()}}catch(e){update();updateFormula();renderInventory();renderAshes()}
+
+// v3.1 game-like UX, non-blocking preparation, tactical grid, cards and player customization
+let battleTokens=[]; let selectedBattleCell=null; let placementMode="select"; let battleId=1;
+const spellKnownSet=()=>new Set(selectedChecks("spells"));
+const preparedSpellSet=()=>new Set(selectedChecks("preparedSpellChecks"));
+const incKnownSet=()=>new Set(selectedChecks("incantations"));
+const preparedIncSet=()=>new Set(selectedChecks("preparedIncantations"));
+function spellKey(s){return s[0]+" — "+s[1]+" ("+s[2]+")"}
+function toggleCheckValue(id,value,on){const box=el(id);if(!box)return;const inp=[...box.querySelectorAll('input[type=checkbox]')].find(x=>x.value===value);if(inp){inp.checked=on;update();save()}}
+function cardMarkup(s,type,known,prepared){let title=s[0],meta=s[1]+" · "+s[2],desc=s[3],key=type==="spell"?spellKey(s):s[0]+" — "+s[1]+" ("+s[2]+")";return `<article class="spell-card"><h4>${esc(title)}</h4><div class="meta">${esc(meta)}</div><p>${esc(desc)}</p><div class="card-actions"><button class="secondary" data-learn="${esc(key)}" data-kind="${type}">${known?"✓ Conhecida":"＋ Conhecer"}</button><button class="${prepared?"":"secondary"}" data-prepare="${esc(key)}" data-kind="${type}" ${known?"":"disabled"}>${prepared?"★ Preparada":"Preparar"}</button><button class="secondary" data-cast="${esc(key)}" data-kind="${type}">Usar</button></div></article>`}
+function renderMagicCards(){let sk=spellKnownSet(),sp=preparedSpellSet(),ik=incKnownSet(),ip=preparedIncSet();el("spellLibraryCards").innerHTML=spellData.map(s=>cardMarkup(s,"spell",sk.has(spellKey(s)),sp.has(spellKey(s)))).join("");el("incantationLibraryCards").innerHTML=incantationData.map(s=>cardMarkup(s,"inc",ik.has(s[0]+" — "+s[1]+" ("+s[2]+")"),ip.has(s[0]+" — "+s[1]+" ("+s[2]+")"))).join("");let ready=[...spellData.filter(s=>sp.has(spellKey(s))).map(s=>cardMarkup(s,"spell",true,true)),...incantationData.filter(s=>ip.has(s[0]+" — "+s[1]+" ("+s[2]+")")).map(s=>cardMarkup(s,"inc",true,true))];el("readyCards").innerHTML=ready.length?ready.join(""):'<p class="small">Nenhuma arte preparada. Abra a Biblioteca e toque em Conhecer e Preparar — ou deixe as regras de preparação em aberto com o mestre.</p>';document.querySelectorAll("[data-learn]").forEach(b=>b.onclick=()=>{let id=b.dataset.kind==="spell"?"spells":"incantations";toggleCheckValue(id,b.dataset.learn,!([...el(id).querySelectorAll("input")].find(x=>x.value===b.dataset.learn)?.checked));renderMagicCards()});document.querySelectorAll("[data-prepare]").forEach(b=>b.onclick=()=>{if(b.disabled)return;let id=b.dataset.kind==="spell"?"preparedSpellChecks":"preparedIncantations";toggleCheckValue(id,b.dataset.prepare,!([...el(id).querySelectorAll("input")].find(x=>x.value===b.dataset.prepare)?.checked));renderMagicCards()});document.querySelectorAll("[data-cast]").forEach(b=>b.onclick=()=>{let raw=b.dataset.kind==="spell"?spellData.find(s=>spellKey(s)===b.dataset.cast):incantationData.find(s=>s[0]+" — "+s[1]+" ("+s[2]+")"===b.dataset.cast);let m=raw?raw[2].match(/(\d+)\s*FOC/i):null,cost=m?Number(m[1]):0;if(num("focCurrent")<cost){el("feedback").textContent=`Foco insuficiente para ${raw?.[0]||"esta arte"} (${num("focCurrent")}/${cost} FOC). O mestre pode autorizar forçar.`;return}el("focCurrent").value=Math.max(0,num("focCurrent")-cost);update();save();el("feedback").textContent=`${raw?.[0]||"Arte"} ativada: ${cost} FOC gastos. Resolva o efeito e o teste com o mestre.`;});}
+function renderBattle(){const grid=el("battleGrid");if(!grid)return;grid.innerHTML="";for(let y=0;y<8;y++)for(let x=0;x<8;x++){let token=battleTokens.find(t=>t.x===x&&t.y===y),b=document.createElement("button");b.className="battle-cell"+(selectedBattleCell&&selectedBattleCell.x===x&&selectedBattleCell.y===y?" selected":"")+(token?" "+token.type:"");b.type="button";b.setAttribute("role","gridcell");b.setAttribute("aria-label",`Casa ${String.fromCharCode(65+x)}${y+1}${token?", "+token.name:""}`);b.innerHTML=token?`<span>${token.type==="player"?"♙":token.type==="ally"?"◆":"☠"}</span>`:`<span class="small">${String.fromCharCode(65+x)}${y+1}</span>`;b.onclick=()=>{selectedBattleCell={x,y};el("selectedCell").textContent="Casa selecionada: "+String.fromCharCode(65+x)+(y+1);if(placementMode==="player"&&!token){battleTokens=battleTokens.filter(t=>t.type!=="player");battleTokens.push({id:battleId++,name:el("name").value||"Personagem",type:"player",x,y});placementMode="select"}else if(placementMode==="enemy"&&!token){let name=prompt("Nome do inimigo:","Inimigo");if(name!==null&&name.trim())battleTokens.push({id:battleId++,name:name.trim(),type:"enemy",x,y});placementMode="select"}else if(placementMode==="remove"&&token){battleTokens=battleTokens.filter(t=>t!==token);placementMode="select"}else if(placementMode==="select"&&token){let dist=battleTokens.find(t=>t.type==="player");let d=dist?Math.max(Math.abs(dist.x-token.x),Math.abs(dist.y-token.y)):null;el("battleReadout").textContent=`${token.name} · ${String.fromCharCode(65+x)}${y+1}`+(d===null?"":" · Distância aproximada: "+d+" casas (diagonal inclusa)");}renderBattle();save()};grid.append(b)}let player=battleTokens.find(t=>t.type==="player");let enemies=battleTokens.filter(t=>t.type==="enemy");if(player){el("battleReadout").textContent=`Personagem em ${String.fromCharCode(65+player.x)}${player.y+1} · ${enemies.length} inimigo(s) no campo. Distâncias em casas; defina a escala com o mestre.`}}
+function renderActions(){let actions=[{name:"Ataque leve",meta:"0 RES · ação principal",desc:"Ataque com arma equipada. Role d20 + atributo + perícia contra a DEF do alvo.",cost:0},{name:"Ataque pesado",meta:"2 RES · ação principal",desc:"Golpe comprometido; sugestão de +2 dano se acertar.",cost:2},{name:"Esquiva",meta:"2 RES · reação",desc:"Teste oposto de DES para evitar um ataque, conforme a regra da mesa.",cost:2},{name:"Defender",meta:"1 RES · ação principal",desc:"Receba +2 DEF até o início do próximo turno.",cost:1},{name:"Conjurar",meta:"custo da magia · ação",desc:"Abra o Grimório e ative uma arte preparada.",tab:"magic"},{name:"Usar item",meta:"depende do item",desc:"Abra o Arsenal e escolha um item carregado." ,tab:"arsenal"}];el("actionCards").innerHTML=actions.map((a,i)=>`<article class="action-card"><h4>${a.name}</h4><div class="meta">${a.meta}</div><p>${a.desc}</p><div class="card-actions"><button class="secondary" data-action="${i}">Selecionar</button></div></article>`).join("");document.querySelectorAll("[data-action]").forEach(b=>b.onclick=()=>{let a=actions[Number(b.dataset.action)];if(a.tab){activateTab(a.tab);return}if(num("resCurrent")<a.cost){el("feedback").textContent="Resistência insuficiente.";return}el("resCurrent").value=Math.max(0,num("resCurrent")-a.cost);update();save();el("feedback").textContent=`Ação selecionada: ${a.name}. Custo de ${a.cost} RES pago; resolva a rolagem na mesa.`})}
+function activateTab(id){document.querySelectorAll(".tab").forEach(t=>t.classList.toggle("active",t.id===id));document.querySelectorAll("[data-tab]").forEach(b=>b.classList.toggle("active",b.dataset.tab===id));if(["pact","freeMagic","rituals","ashes","progress"].includes(id)){el("moreNav").classList.remove("hidden")}else{el("moreNav").classList.add("hidden")}window.scrollTo({top:0,behavior:"smooth"})}
+// replace tab navigation to keep the interface compact
+ document.querySelectorAll("[data-tab]").forEach(btn=>btn.addEventListener("click",()=>activateTab(btn.dataset.tab)));
+el("moreToggle").addEventListener("click",()=>el("moreNav").classList.toggle("hidden"));el("settingsToggle").addEventListener("click",()=>el("settingsPanel").classList.toggle("hidden"));
+document.querySelectorAll("[data-theme]").forEach(b=>b.addEventListener("click",()=>{document.body.classList.remove("theme-ember","theme-moon","theme-blood");document.body.classList.add("theme-"+b.dataset.theme);save()}));el("playerAccent").addEventListener("change",()=>{document.documentElement.style.setProperty("--accent",el("playerAccent").value);save()});el("densityToggle").addEventListener("click",()=>{document.body.classList.toggle("compact-mode");save()});
+document.querySelectorAll("[data-magicview]").forEach(b=>b.addEventListener("click",()=>{document.querySelectorAll("[data-magicview]").forEach(x=>x.classList.toggle("active",x===b));document.querySelectorAll(".magic-view").forEach(x=>x.classList.toggle("active",x.id==="magic-"+b.dataset.magicview))}));
+el("placePlayer").onclick=()=>{placementMode="player";el("battleReadout").textContent="Toque em uma casa vazia para posicionar o personagem."};el("addEnemy").onclick=()=>{placementMode="enemy";el("battleReadout").textContent="Toque em uma casa vazia para adicionar um inimigo."};el("removeToken").onclick=()=>{placementMode="remove";el("battleReadout").textContent="Toque em uma peça para removê-la."};el("clearBattle").onclick=()=>{if(confirm("Limpar todas as peças do campo de batalha?")){battleTokens=[];renderBattle();save()}};
+// Persist tactical positions and UI preferences with existing JSON save/load.
+const oldData=data;data=function(){let d=oldData();d.battleTokens=battleTokens;d.uiTheme=[...document.body.classList].find(c=>c.startsWith("theme-"))||"theme-ember";d.compactMode=document.body.classList.contains("compact-mode");d.playerAccent=el("playerAccent").value;return d};
+const oldApplyData=applyData;applyData=function(d){oldApplyData(d);battleTokens=Array.isArray(d.battleTokens)?d.battleTokens:[];if(d.uiTheme){document.body.classList.remove("theme-ember","theme-moon","theme-blood");document.body.classList.add(d.uiTheme)}if(d.compactMode)document.body.classList.add("compact-mode");if(d.playerAccent){el("playerAccent").value=d.playerAccent;document.documentElement.style.setProperty("--accent",d.playerAccent)}renderBattle();renderMagicCards();renderActions()};
+// Keep the library cards synchronized with checkboxes and character attributes.
+document.querySelectorAll('#spells input,#preparedSpellChecks input,#incantations input,#preparedIncantations input').forEach(x=>x.addEventListener('change',renderMagicCards));
+const oldUpdate=update;update=function(){oldUpdate();if(el("preparedCount"))el("preparedCount").textContent=selectedChecks("preparedSpellChecks").length+" feitiços · "+selectedChecks("preparedIncantations").length+" encantamentos"};
+// initialize without overwriting the loaded sheet; restore grid and appearance from local save
+try{const savedUI=JSON.parse(localStorage.getItem("outerGods2Sheet")||"null");if(savedUI){battleTokens=Array.isArray(savedUI.battleTokens)?savedUI.battleTokens:[];if(savedUI.uiTheme){document.body.classList.remove("theme-ember","theme-moon","theme-blood");document.body.classList.add(savedUI.uiTheme)}if(savedUI.compactMode)document.body.classList.add("compact-mode");if(savedUI.playerAccent){el("playerAccent").value=savedUI.playerAccent;document.documentElement.style.setProperty("--accent",savedUI.playerAccent)}}}catch(e){}
+renderBattle();renderActions();renderMagicCards();
+
+</script>
+</body>
+</html>
